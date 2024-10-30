@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bear E-Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Bear Store.</a>
+
+    <div class="search">
+      <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-64.png" alt="">
+      <input type="text" placeholder="Bạn cần tìm gì?">
+    </div>
+
+    <div class="icons">
+      <div class="item">
+        <img src="assets/user.png" alt="">
+        <p>Đăng Nhập</p>
+      </div>
+      <div class="item">
+        <img src="assets/cart.png" alt="">
+        <p>Giỏ Hàng</p>
+      </div>
+    </div> 
+  </header>
+
+<!-- Funtion script header -->
+
+  <script type="text/javascript">
+    document.addEventListener("scroll", function(){
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    })
+  </script>
+
+<!-- Menu bar -->
+
+  <menu>
+    <div class="header-main">
+      <ul class="item">
+        <li>
+          <a href="https://cellphones.com.vn/mobile.html">
+            <i> <img src="https://cdn.tgdd.vn/content/phonne-24x24.png" alt=""></i>
+            <span>Điện Thoại</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://cellphones.com.vn/laptop.html">
+            <i> <img src="https://cdn.tgdd.vn/content/laptop-24x24.png" alt=""></i>
+            <span>Laptop</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://cellphones.com.vn/thiet-bi-am-thanh.html">
+            <i> <img src="https://cdn.tgdd.vn/content/phu-kien-24x24.png" alt=""></i>
+            <span>Tai Nghe</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://cellphones.com.vn/do-choi-cong-nghe.html">
+            <i> <img src="https://cdn.tgdd.vn/content/watch-24x24.png" alt=""></i>
+            <span>Đồng Hồ</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://cellphones.com.vn/may-tinh-de-ban.html">
+            <i> <img src="https://cdn.tgdd.vn/content/PC-24x24.png" alt=""></i>
+            <span>PC</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://cellphones.com.vn/tablet.html">
+            <i> <img src="https://cdn.tgdd.vn/content/tablet-24x24.png" alt=""></i>
+            <span>Tablet</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </menu>
+
+  <section>
+    <div class="container">
+      <div class="wrapper">
+          <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/Sliding-airpod-4.jpg" alt="">
+        
+       
+          <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/xiaomi-14T-series-home-mo-ban.jpg" alt="">
+        
+        
+          <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/dien-thoai-samsung-galaxy-s24-fe-home-27-9-2024.png" alt="">
+        
+        
+          <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/watch-gt-5-series-03-10-home-new-new.jpg" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <article>
+    <h1>KHUYẾN MÃI ONLINE</h1>
+    <div class="sale">
+      <ul class="product-tab">
+        <li class="item-sale">
+          <a href="">
+            <img src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/4d/a0/4da08429eb21b161efef129d8e5fa26d.png" alt="">
+          </a>
+        </li>
+
+        <li class="item-sale">
+          <a href="">
+            <img src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/96/bb/96bbd355c45eed77cb66b9e238d86c85.png" alt="">
+          </a>
+        </li>
+
+        <li class="item-sale">
+          <a href="">
+            <span>Điện Thoại</span>
+          </a>
+        </li>
+
+        <li class="item-sale">
+          <a href="">
+            <span>Apple</span>
+          </a>
+        </li>
+
+        <li class="item-sale">
+          <a href="">
+            <span>Laptop</span>
+          </a>
+        </li>
+
+        <li class="item-sale">
+          <a href="">
+            <span>Đồng Hồ</span>
+          </a>
+        </li>
+        <li class="item-sale">
+          <a href="">
+            <span>Tai Nghe</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sale-gif">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:1200:75/q:90/plain/https://dashboard.cellphones.com.vn/storage/b2s-update-19-06%20(1).gif" alt="">
+      </div>
+
+      <div class="homeproduct-block">
+        <div class="block-product">
+            <h3 style="font-size: 30px;">ĐIỆN THOẠI NỔI BẬT NHẤT</h3>
+            <ul class="list-product">
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-new">Mẫu mới</span>
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/329151/iphone-16-pro-max-tu-nhien-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>iPhone 16 Pro Max 1TB</h3>
+    
+                <strong class="price">46.990.000₫</strong>
+              </li>
+    
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-la-new-2-600x600.jpg" alt="">
+                </div>
+    
+                <h3>iPhone 12 64GB</h3>
+    
+                <strong class="price">10.990.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">13.090.000₫</p>
+                  <span class="percent">-16%</span>
+                </div>
+              </li>
+    
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/303716/iphone-15-hong-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>iPhone 15 256GB</h3>
+    
+                <p class="item-online">
+                  <span>Online giá rẻ quá</span>
+                </p>
+    
+                <strong class="price">22.990.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">25.990.000₫</p>
+                  <span class="percent">-11%</span>
+                </div>
+              </li>
+    
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-new">Mẫu mới</span>
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/329143/iphone-16-pro-titan-sa-mac.png" alt="">
+                </div>
+    
+                <h3>iPhone 16 Pro 128GB</h3>
+    
+                <strong class="price">28.990.000₫</strong>
+              </li>
+    
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/210644/iphone-11-den-600x600.jpg" alt="">
+                </div>
+    
+                <h3>iPhone 11 128GB</h3>
+    
+                <p class="item-online">
+                  <span>Online giá rẻ quá</span>
+                </p>
+    
+                <strong class="price">10.490.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">13.390.000₫</p>
+                  <span class="percent">-21%</span>
+                </div>
+              </li>
+    
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/320378/realme-c67-den-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Realme C67 8GB/256GB</h3>
+    
+                <strong class="price">5.690.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">5.990.000₫</p>
+                  <span class="percent">-5%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/322670/samsung-galaxy-a55-5g-tim-thumb-1-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Samsung Galaxy A55 5G 8GB/256GB</h3>
+    
+                <strong class="price">10.790.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">10.990.000₫</p>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/317624/realme-c53-black-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Realme C53 8GB/256GB</h3>
+    
+                <strong class="price">3.850.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">4.790.000₫</p>
+                  <span class="percent">-19%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/320461/xiaomi-redmi-note-13-green-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Realme C67 8GB/256GB</h3>
+    
+                <strong class="price">5.690.000₫</strong>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/323563/samsung-galaxy-m35-5g-xanhdam-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Xiaomi Redmi Note 13 Pro 8GB/128GB</h3>
+    
+                <strong class="price">7.290.000₫</strong>
+    
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/320722/samsung-galaxy-z-flip6-xanh-thumbn-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Samsung Galaxy Z Flip6 5G 12GB/256GB</h3>
+    
+                <strong class="price">25.590.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">27.990.000₫</p>
+                  <span class="percent">-7%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/522/317621/samsung-galaxy-tab-a9-den-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Samsung Galaxy Tab A9 4G 4GB/64GB</h3>
+    
+                <strong class="price">3.990.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">5.490.000₫</p>
+                  <span class="percent">-27%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/309831/xiaomi-redmi-note-13-gold-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Xiaomi Redmi Note 13 8GB/128GB</h3>
+    
+                <strong class="price">5.290.000₫</strong>
+    
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/289700/iphone-14-pro-max-bac-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>iPhone 14 Pro Max 256GB</h3>
+    
+                <strong class="price">25.590.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">31.890.000₫</p>
+                  <span class="percent">-10%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/329938/xiaomi-14t-grey-thumb-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Xiaomi 14T 5G</h3>
+    
+                <strong class="price">11.990.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">12.990.000₫</p>
+                  <span class="percent">-7%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-xam-thumbn-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Samsung Galaxy Z Fold6 5G</h3>
+    
+                <strong class="price">41.990.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">43.990.000₫</p>
+                  <span class="percent">-4%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/306994/samsung-galaxy-s23-fe-mint-thumbnew-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Samsung Galaxy S23 FE 5G</h3>
+  
+                <p class="item-online">
+                  <span>Online giá rẻ quá</span>
+                </p>
+    
+                <strong class="price">11.290.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">14.890.000₫</p>
+                  <span class="percent">-24%</span>
+                </div>
+              </li>
+
+              <li class="item">
+                <div class="item-label">
+                  <span class="lb-tragop">Trả góp 0%</span>
+                </div>
+                
+                <div class="item-img">
+                  <img src="https://cdn.tgdd.vn/Products/Images/42/329008/xiaomi-redmi-14c-blue-1-600x600.jpg" alt="">
+                </div>
+    
+                <h3>Xiaomi Redmi 14C 128GB</h3>
+    
+                <strong class="price">3.490.000₫</strong>
+    
+                <div class="box-p">
+                  <p class="price-old">3.690.000₫</p>
+                  <span class="percent">-5%</span>
+                </div>
+              </li>
+            </ul>
+
+      </div>
+
+      <div class="load-more">Xem Thêm Sản Phẩm</div>
+
+      <!-- Funtion Script Product -->
+
+      <script>
+        let loadMoreBtn = document.querySelector('.load-more');
+        let currentItem = 6;
+
+        loadMoreBtn.onclick = () =>{
+          let boxes = [...document.querySelectorAll('.block-product .list-product .item')];
+          for (var i = currentItem; i < currentItem + 6; i++){
+            boxes[i].style.display = 'inline-block';
+          }
+          currentItem += 6;
+
+          if(currentItem >= boxes.length){
+            loadMoreBtn.style.display = 'none';
+          }
+        }
+      </script>
+
+    <!-- Product Laptop -->
+
+    <div class="homeproduct-block-laptop">
+      <div class="block-product-laptop">
+          <h3 style="font-size: 30px;">LAPTOP</h3>
+          <ul class="list-product-laptop">
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/c/t/ctm.png" alt="">
+              </div>
+
+              <h3>Laptop Acer Aspire 3 A314-42P-R3B3 NX.KSFSV.001</h3>
+
+              <strong class="price">11.990.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">13.990.000₫</p>
+                <span class="percent">-14%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_5_1.png" alt="">
+              </div>
+
+              <h3>Apple MacBook Air M1 256GB 2020</h3>
+
+              <strong class="price">18.490.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">22.990.000₫</p>
+                <span class="percent">-20%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_-_2023-06-08t005130.908.png" alt="">
+              </div>
+
+              <h3>Laptop ASUS VivoBook Go 14 E1404FA-NK177W</h3>
+
+              <strong class="price">12.390.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">14.490.000₫</p>
+                <span class="percent">-14%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_1__1_8.png" alt="">
+              </div>
+
+              <h3>Apple MacBook Air M2 2022 8GB 256GB</h3>
+
+              <strong class="price">23.990.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">24.990.000₫</p>
+                <span class="percent">-4%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_509_9__1.png" alt="">
+              </div>
+
+              <h3>Laptop Lenovo LOQ 15IAX9 83GS001RVN</h3>
+
+              <strong class="price">21.390.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">23.990.000₫</p>
+                <span class="percent">-11%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_10__4_41.png" alt="">
+              </div>
+
+              <h3>Laptop HP Pavilion 15-EG3111TU 8U6L8PA</h3>
+
+              <strong class="price">18.490.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">21.290.000₫</p>
+                <span class="percent">-13%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_8__1_91.png" alt="">
+              </div>
+
+              <h3>Laptop Lenovo Ideapad Slim 5 14IAH8 83BF002NVN</h3>
+
+              <strong class="price">15.990.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">17.290.000₫</p>
+                <span class="percent">-8%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_5__2.png" alt="">
+              </div>
+
+              <h3>Laptop MSI Gaming Thin 15 B13UC-2081VN</h3>
+
+              <strong class="price">18.490.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">21.290.000₫</p>
+                <span class="percent">-16%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__3_13.png" alt="">
+              </div>
+
+              <h3>Laptop Acer Aspire 3 Spin A3SP14-31PT-387Z</h3>
+
+              <strong class="price">9.490.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">11.990.000₫</p>
+                <span class="percent">-21%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_509_13__1.png" alt="">
+              </div>
+
+              <h3>Laptop ASUS TUF Gaming F15 FX507ZC4-HN095W</h3>
+
+              <strong class="price">20.290.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">24.990.000₫</p>
+                <span class="percent">-19%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_509_26_.png" alt="">
+              </div>
+
+              <h3>Laptop Acer Gaming Aspire 5 A515-58GM-53PZ</h3>
+
+              <strong class="price">15.490.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">20.490.000₫</p>
+                <span class="percent">-24%</span>
+              </div>
+            </li>
+
+            <li class="item-laptop">
+              <div class="item-label-laptop">
+                <span class="lb-tragop-laptop">Trả góp 0%</span>
+              </div>
+              
+              <div class="item-img-laptop">
+                <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_509_1__1.png" alt="">
+              </div>
+
+              <h3>Laptop Gaming Acer Nitro 5 Tiger AN515 58 52SP</h3>
+
+              <strong class="price">18.990.000₫</strong>
+
+              <div class="box-p">
+                <p class="price-old">28.300.000₫</p>
+                <span class="percent">-33%</span>
+              </div>
+            </li>
+          </ul>
+
+      </div>
+
+    </div>
+  </article>
+  
+    
+</body>
+</html>

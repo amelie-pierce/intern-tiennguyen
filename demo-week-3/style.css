@@ -133,7 +133,7 @@ header{
     }
 }
 .hot-product{
-    padding: 15px;
+    padding: 10px;
 }
 .hot-product h2{
     font-size: 25px;
@@ -162,12 +162,12 @@ header{
     padding: 0 10px;
     justify-content: flex-start;
     margin: 0 auto; 
-    max-width: 2000px;
-    margin-left: 10%;
+    max-width: 1400px;
 }
 .product{
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
     width: 300px;
     border-radius: 20px;

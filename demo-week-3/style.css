@@ -79,24 +79,20 @@ header{
     text-decoration: none;
 }
 .slide-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 340px;
-}
-.container-slide {
-    width: 690px;
-    border-radius: 8px;
-    left: 50%;
+    height: auto;
     overflow: hidden;
+    width: 690px;
+    margin: 20px 30%;
+    border-radius: 8px;
     border: 3px solid #b1afaf;
 }
-.container-slide .wrapper{
+ .wrapper{
     width: 100%;
     display: flex;
     animation: slide 10s infinite linear;
+    animation-direction: alternate;
 }
-.container-slide .wrapper img{
+ .wrapper img{
     width: 100%;
 }
 @keyframes slide {
@@ -126,10 +122,10 @@ header{
     }
     90%
     {
-      transform: translateX(0);
+      transform: translateX(-300%);
     }
     100%{
-      transform: translateX(0);
+      transform: translateX(-300%);
     }
 }
 .hot-product{
@@ -142,7 +138,7 @@ header{
 .product-label{
     display: flex;
     width: 100px;
-    top: 70%;
+    margin-left: -35px;
     padding: 10px;
 }
 .discount{
@@ -151,18 +147,13 @@ header{
     font-size: 11px;
     margin-left: -120%;
 }
-.center{
-    display: flex;
-    justify-content: center;
-}
 .product-list{
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     padding: 0 10px;
-    justify-content: flex-start;
     margin: 0 auto; 
-    max-width: 1400px;
+    max-width: 1450px;
 }
 .product{
     display: flex;
@@ -183,6 +174,7 @@ header{
 .product-content{
    padding: 10px; 
    display: flex;
+   flex: 1;
    flex-direction: column;
 }
 .product-top{
@@ -219,7 +211,6 @@ header{
 .product-new-price{
     margin-top: auto;
     flex-shrink: 0;
-    position: relative;
 }
 .product-new-price strong{
     color: red;
@@ -243,16 +234,10 @@ header{
     .logo {
         font-size: 24px;
     }
-    .item-header h4 {
-        font-size: 14px;
-    }
-    .item-menu a {
-        font-size: 18px;
-    }
-    
-}
+
 @media screen and (max-width: 992px) {
     .logo {
+        width: 130px;
         font-size: 16px;
     }
     .menu-list {
@@ -261,15 +246,8 @@ header{
         padding: 10px;
     }
     .login-cart{
+        width: 550px;
         margin-right: 5px;
-    }
-    .item-header h4 {
-        width: 80px;
-        font-size: 12px;
-        align-items: center;
-    }
-    .product-list{
-        flex-wrap: wrap;
     }
     .product {
         width: calc(100% / 3 - 10px);
@@ -287,16 +265,11 @@ header{
         width: 80%;
     }
     .login-cart {
+        justify-content: center;
         gap: 10px;
     }
     .menu-list{
         height: auto;
-        flex-wrap: wrap;
-    }
-    .item-menu a {
-        font-size: 16px;
-    }
-    .product-list{
         flex-wrap: wrap;
     }
     .product {
@@ -305,17 +278,18 @@ header{
 }
 @media screen and (max-width: 576px) {
     .logo {
-        font-size: 20px;
+        font-size: 16px;
+    }
+    .login-cart{
+        margin-left: -22px;
     }
     .menu-list {
         height: auto;
         flex-wrap: wrap;
         padding: 5px;
     }
-    .product-list{
-        flex-wrap: wrap;
-    }
     .product {
         width: 100%;
     }
+}
 }

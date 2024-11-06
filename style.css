@@ -9,6 +9,23 @@
   text-transform: capitalize;
   transition: 0.2s linear;
 }
+
+
+/* 
+  .slide-page
+    overflow: hidden;
+    width: 690px;
+    margin-left: 30%; */
+
+
+/*  
+    .container-slide
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30%; */
+
 html{
   font-size: 30px;
   scroll-behavior: smooth;

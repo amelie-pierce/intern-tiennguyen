@@ -17,6 +17,10 @@ header{
     align-items: center;
     border-bottom: 2px solid #b6b3b3;
 }
+.container{
+    display: flex;
+    gap: 20px;
+}
 .logo{
     font-size: 30px;
     color: #d70018;
@@ -90,10 +94,10 @@ header{
     width: 100%;
     display: flex;
     animation: slide 10s infinite linear;
-    animation-direction: alternate;
 }
  .wrapper img{
     width: 100%;
+    object-fit: cover;
 }
 @keyframes slide {
     0%{

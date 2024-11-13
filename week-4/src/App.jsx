@@ -14,10 +14,10 @@ import SearchParams from "./SearchParams";
     // </div>
 
     return (
-      <div>
-      <h1>Adopt Me!</h1>
-      <SearchParams />
-    </div>
+          <div>
+            <h1>Adopt Me!</h1>
+            <SearchParams />
+          </div>
     );
   };
 

@@ -10,6 +10,7 @@ const Results = ({pets}) => {
                     <Pet
                         {...pet}
                         animal={pet.animal}
+                        id={pet.id}
                         name={pet.name}
                         breed={pet.breed}
                         images={pet.images}
@@ -23,3 +24,18 @@ const Results = ({pets}) => {
 }
 
 export default Results;
+
+// const testFuntion = (color) => {
+//     console.log(color)
+
+// }
+
+// testFunction('red')
+
+// testFuntion()
+    // color: function props (arguments/ attributes/ ...)
+    // Điểm kết nối các components
+
+    // {pets} gọi trực tiếp biến trong object (detructering) ra
+    // return: trả về JSX
+// function textFunction(color) {}

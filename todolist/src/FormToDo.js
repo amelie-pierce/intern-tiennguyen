@@ -18,7 +18,7 @@ function FormToDo({newTask}) {
     return(
         <form className="FormToDo" onSubmit={handleSubmit}>
             <label htmlFor="todo">New Todo</label>
-            <input type="text" placeholder="New Todo" value={todo} onChange={handleChange} />
+            <input id="todo" type="text" placeholder="New Todo" value={todo} onChange={handleChange} />
             <button type="submit">Add</button>
         </form>
     );

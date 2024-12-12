@@ -1,14 +1,14 @@
 import React, { useState } from "react";
+import FormToDo from "./FormToDo";
 
 function ToDoList() {
 
     const [task, setTask] = useState([
         { id: 0, todo: "Learn JavaScript", status: true},
-        { id: 0, todo: "Learn React", status: false}
+        { id: 1, todo: "Learn React", status: false}
     ]);
 
-    const create = () => {
-        const newToDo = { id: task.length + 1, todo: "Learn Design", status: true}
+    const create = (newToDo) => {
         setTask([...task, newToDo]);
     }
 
@@ -21,8 +21,7 @@ function ToDoList() {
                     <li key={t.id}>{t.todo} - {t.status ? "Completed" : "Incomplete"}</li>
                 ))}
             </ul>
-
-            <button onClick={create}>Add</button>
+            <FormToDo newTask={create} />
         </div>
     );
 }

@@ -11,7 +11,6 @@ function ToDoList() {
     const create = (newToDo) => {
         setTask([...task, newToDo]);
     }
-
     return (
         <div>
             <h1>Todo App</h1>

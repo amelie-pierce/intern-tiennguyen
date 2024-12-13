@@ -10,8 +10,7 @@ function FormToDo({newTask, task}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (todo.trim() === "") return;
-        const maxId = task.length > 0 ? Math.max(...task.map((e) => e.id)) : 0;
-        const newId = maxId + 1;
+        const newId = task.length; 
         const createNewTodo = { id: newId, todo, status: false };
         newTask(createNewTodo);
         setTodo("");

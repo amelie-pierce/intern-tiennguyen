@@ -21,7 +21,7 @@ function ToDoList() {
                     <li key={t.id}>{t.todo} - {t.status ? "Completed" : "Incomplete"}</li>
                 ))}
             </ul>
-            <FormToDo newTask={create} />
+            <FormToDo newTask={create} task={task} />
         </div>
     );
 }

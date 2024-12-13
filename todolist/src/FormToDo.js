@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 
-function FormToDo({newTask}) {
+function FormToDo({newTask, task}) {
     const [todo, setTodo] = useState("")
 
     const handleChange = (event) => {
@@ -10,7 +10,9 @@ function FormToDo({newTask}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (todo.trim() === "") return;
-        const createNewTodo = { id: todo.length + 1, todo, status: false };
+        const maxId = task.length > 0 ? Math.max(...task.map((e) => e.id)) : 0;
+        const newId = maxId + 1;
+        const createNewTodo = { id: newId, todo, status: false };
         newTask(createNewTodo);
         setTodo("");
     }

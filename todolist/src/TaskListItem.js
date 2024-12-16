@@ -18,7 +18,7 @@ function TaskListItem({ task, onRemoveTask, onToggleTaskStatus }) {
                 // Xử lý sự kiện khi người dùng click vào checkbox
             />
             <li>
-                {task.todo} - {task.status ? "Completed" : "Incomplete"}
+                {task.task} - {task.status ? "Completed" : "Incomplete"}
                 {/* Hiển thị danh sách: */}
                 {/* + {task.todo}: Hiển thị tên công việc */}
                 {/* + {task.status}: Toán tử ba ngôi - Nếu task.status là true thì hiển thị Completed và ngược lại */}

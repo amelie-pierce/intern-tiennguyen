@@ -10,8 +10,8 @@ function ToDoApp() {
 // Tạo function ToDoApp
 
     const [tasks, setTasks] = useState([
-        { id: 0, todo: "Learn JavaScript", status: true},
-        { id: 1, todo: "Learn React", status: false}
+        { id: 0, task: "Learn JavaScript", status: true},
+        { id: 1, task: "Learn React", status: false}
     ]);
     // Tạo useState:
     // + tasks: Trạng thái ban đầu có mảng chứa 2 Object

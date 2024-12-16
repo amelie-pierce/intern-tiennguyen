@@ -5,6 +5,7 @@ import TaskForm from "./TaskForm"
 // Nhập component TaskForm để sử dụng
 import TaskListItem from "./TaskListItem";
 // Nhập component TaskListItem để sử dụng
+import EditTask from "./EditTask";
 
 function TaskApp() {
 // Tạo function TaskApp
@@ -16,6 +17,10 @@ function TaskApp() {
     // Tạo useState:
     // + tasks: Trạng thái ban đầu có mảng chứa 2 Object
     // + setTasks: Hàm để cập nhập trạng thái task
+
+    const [editTask, setEditTask] = useState(null);
+    // Tạo useState:
+    // + editTask: Để lưu id công việc hiện tại đang được chỉnh sửa, giá trị ban đầu là null (không có công việc nào đang được chỉnh sửa)
 
     const addTask = (newTask) => {
         setTasks([...tasks, newTask]);
@@ -50,9 +55,43 @@ function TaskApp() {
         // Cập nhập trạng thái với giá trị mới
     }
 
+    const startEdit = (id) => {
+    // Hàm được gọi khi người dùng click img bút chì
+    // Tham số id là id của công việc đang chỉnh sửa
+        setEditTask(id);
+        // Cập nhập trạng thái editTask thành id của công việc cần chỉnh sửa
+    }
+
+    const updateTask = (id, updatedTask) => {
+    // Tham số id là id của công việc cần được cập nhập
+    // Tham số updatedTask là nội dung mới của công việc
+        const updatedTasks = tasks.map((tasks) => 
+        // updatedTasks: Biến để lưu trữ danh sách công việc sau khi cập nhập
+        // tasks.map() lặp qua từng công việc trong danh sách tasks
+        // tasks: callback nhận từng phần tử công việc trong mảng tasks
+            tasks.id === id ? {...tasks, task: updatedTask} : tasks
+            // tasks.id: id của công việc hiện tại (trong vòng lặp map())
+            // id: id của công việc muốn cập nhập (được truyền vào hàm updateTask) => Nếu tasks.id bằng id cập nhập thì thực hiện cập nhập
+            // ...tasks: sao chép tất cả thuộc tính của công việc hiện tại
+            // task: updateTask: ghi đè thuộc tính task bằng nội dung được truyền vào qua updatedTask
+            // => Tạo một object mới. giữ nguyên tất cả các thuộc tính trù thuộc tính task
+            // Nếu điều kiện sai thì giữ nguyên không thay đổi gì
+        ); 
+        setTasks(updatedTasks);
+        // Cập nhập trạng thái công việc với danh sách mới
+        setEditTask(null);
+        // Đặt lại trạng thái editTask về null (kết thúc chỉnh sửa)
+    };
+
+    const cancelEdit = () => {
+    // Hàm dùng để hủy trạng thái chỉnh sửa
+        setEditTask(null);
+        // Khi thực thi thì nó đặt lại trạng thái editTask về null, kết thúc chỉnh sửa mà không thay đổi gì
+    }
+
 
     return (
-        <div>
+        <div className="TaskList">
         {/* Thẻ chứa toàn bộ nội dung  */}
             <h1>Task App</h1>
             {/* Tiêu đề  */}
@@ -62,17 +101,33 @@ function TaskApp() {
             {/* Tạo danh sách */}
                 {tasks.map((task) => (
                 // Lặp qua từng phần tử trong tasks và hiển thị. Trong đó t là mỗi Object trong mảng
-                    <TaskListItem
-                    // Gọi component TaskListItem
-                        key={task.id}
-                        // Để xác định từng phần tử trong mảng có 1 id duy nhất
-                        task={task}
-                        // Truyền toàn bộ các Object vào prop task của component TaskListItem
-                        onRemoveTask={removeTask}
-                        // onRemoveTask là prop được truyền vào từ component TaskListItem và truyền hàm removeTask vào đây
-                        onToggleTaskStatus={toggleTaskStatus}
-                        // onToggleTaskStatus là prop được truyền vào từ component TaskListItem và truyền hàm toggleTaskStatus vào đây
-                    />
+                   <div key={task.id}>
+                    {/* Để theo dõi từng id */}
+                        {editTask === task.id ? (
+                        // Kiểm tra công việc hiện có đang được chỉnh sửa không
+                        // Nếu đúng thì hiển thị component EditTask
+                        // Nếu sai thì hiển thị component TaskListItem
+                            <EditTask
+                                task={task}
+                                // Truyền công việc hiện tại
+                                onUpdate={updateTask}
+                                // Prop xử lý khi người dùng lưu chỉnh sửa
+                                onCancel={cancelEdit}
+                                // Prop hủy chỉnh sửa
+                            />
+                        ) : (
+                             <TaskListItem
+                            // Gọi component TaskListItem
+                                task={task}
+                                // Truyền toàn bộ các Object vào prop task của component TaskListItem
+                                onRemoveTask={removeTask}
+                                // onRemoveTask là prop được truyền vào từ component TaskListItem và truyền hàm removeTask vào đây
+                                onToggleTaskStatus={toggleTaskStatus}
+                                // onToggleTaskStatus là prop được truyền vào từ component TaskListItem và truyền hàm toggleTaskStatus vào đây
+                                onEdit={startEdit}
+                            />
+                        )}
+                   </div>
                 ))}
             </ul>
             <TaskForm onAddTask={addTask} tasks={tasks} />

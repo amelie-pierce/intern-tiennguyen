@@ -6,8 +6,8 @@ import TaskForm from "./TaskForm"
 import TaskListItem from "./TaskListItem";
 // Nhập component TaskListItem để sử dụng
 
-function ToDoApp() {
-// Tạo function ToDoApp
+function TaskApp() {
+// Tạo function TaskApp
 
     const [tasks, setTasks] = useState([
         { id: 0, task: "Learn JavaScript", status: true},
@@ -54,7 +54,7 @@ function ToDoApp() {
     return (
         <div>
         {/* Thẻ chứa toàn bộ nội dung  */}
-            <h1>Todo App</h1>
+            <h1>Task App</h1>
             {/* Tiêu đề  */}
             <span>Task Checking Application</span>
             {/* Phụ đề */}
@@ -82,5 +82,5 @@ function ToDoApp() {
     );
 }
 
-export default ToDoApp;
+export default TaskApp;
 // Xuất component dưới dạng mặc định từ file hiện tại

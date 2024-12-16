@@ -30,21 +30,21 @@ function TaskForm({onAddTask, tasks}) {
     }
 
     return(
-        <form className="FormToDo" onSubmit={handleSubmit}>
+        <form className="FormTask" onSubmit={handleSubmit}>
         {/* Hiển thị biểu mẫu để người dùng nhập và thêm công việc */}
         {/*  Hàm handleSubmit để xử lý sự kiện khi người dùng nhấn nút Add */}
-            <label htmlFor="todo">New Todo</label>
+            <label htmlFor="task">New Task</label>
             {/* Hiển thị nhãn cho ô inout */}
-            {/* htmlFor: Kết nối nhãn với ô input có id: todo (Khi click vào chữ "New Todo" thì tự nhảy tới ô input) */}
+            {/* htmlFor: Kết nối nhãn với ô input có id: task (Khi click vào chữ "New Task" thì tự nhảy tới ô input) */}
             <input 
-                id="todo" 
+                id="task" 
                 // Đặt id để kết nối với thẻ <label></label>
                 type="text" 
                 // Định nghĩa đây là ô nhập văn bản
-                placeholder="New Todo"
+                placeholder="New Task"
                 // Hiển thị gợi ý khi ô inout rỗng 
                 value={task} 
-                // Liên kết ô input với trạng thái todo
+                // Liên kết ô input với trạng thái task
                 onChange={handleChange}
                 // Xử lý sự kiện khi người dùng thay đổi nội dung trong ô input, cập nhập trạng thái 
             />

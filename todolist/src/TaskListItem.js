@@ -3,7 +3,7 @@ import React from "react";
 
 function TaskListItem({ task, onRemoveTask, onToggleTaskStatus }) {
 // Tạo function TaskListItem và truyền props: 
-// + task: Object chứa thông tin của một công việc: id: , todo, status: 
+// + task: Object chứa thông tin của một công việc: id: , task, status: 
 // + onRemoveTask: Hàm callback để xóa công việc
 // + onToggleTaskStatus: Hàm callback để thay đổi trạng thái công việc
     return (
@@ -20,7 +20,7 @@ function TaskListItem({ task, onRemoveTask, onToggleTaskStatus }) {
             <li>
                 {task.task} - {task.status ? "Completed" : "Incomplete"}
                 {/* Hiển thị danh sách: */}
-                {/* + {task.todo}: Hiển thị tên công việc */}
+                {/* + {task.task}: Hiển thị tên công việc */}
                 {/* + {task.status}: Toán tử ba ngôi - Nếu task.status là true thì hiển thị Completed và ngược lại */}
             </li>
             <img 

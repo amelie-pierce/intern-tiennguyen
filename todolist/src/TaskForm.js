@@ -1,8 +1,10 @@
 import React, { useState} from "react";
 // React: Nhập thư viện React để sử dụng tính năng React trong component
 // useState: Hook để quản lý trạng thái trong function
+import { v4 as uuidv4 } from "uuid";
+// Nhập thư viện uuid để tạo id duy nhất
 
-function TaskForm({onAddTask, tasks}) {
+function TaskForm({onAddTask}) {
 // Tạo function TaskForm và truyền props:
 // + onAddTask: Hàm callback được truyền từ component cha, dùng để thêm công việc
 // + tasks: Danh sách công việc hiện có, được dùng để tạo ID duy nhất cho công việc mới 
@@ -20,9 +22,9 @@ function TaskForm({onAddTask, tasks}) {
         // Ngăn reload trang khi gửi form
         if (task.trim() === "") return;
         // Nếu task chỉ chứa khoảng trắng thì dừng sự kiện ( không thêm được )
-        const newTask = { id: tasks.length, task, status: false };
+        const newTask = { id: uuidv4(), task, status: false };
         // Tạo Object newTask đại diện cho công việc mới
-        // + id: task.length -> STT của id dựa trên độ dài danh sách tasks
+        // + id: uuidv4() Nó sẽ tạo ra một chuỗi id duy nhất mỗi khi được gọi
         onAddTask(newTask);
         // Gọi hàm callback onAddTask và truyền newTask làm tham số (Thêm công việc mới vào danh sách trong component cha)
         setTask("");

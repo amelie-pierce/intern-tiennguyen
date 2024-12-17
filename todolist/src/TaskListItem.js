@@ -26,11 +26,13 @@ function TaskListItem({ task, onRemoveTask, onToggleTaskStatus, onEdit }) {
             <img
                 style={{width: "30px", height: "30px"}}
                 src="https://icon-library.com/images/edit-icon-image/edit-icon-image-29.jpg"
+                alt="Edit-Task"
                 onClick={() => onEdit(task.id)}
             />
             <img 
                 style={{width: "30px", height: "30px"}}
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhY_tishzTeujCDUzLrVq_ZIb7rIBZ9A8uQ&s" 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhY_tishzTeujCDUzLrVq_ZIb7rIBZ9A8uQ&s"
+                alt="Remove-Task" 
                 onClick={()=>onRemoveTask(task.id)}
             />
             {/* Hình ảnh biểu thị cho xóa công việc */}

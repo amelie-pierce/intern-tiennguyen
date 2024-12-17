@@ -6,13 +6,16 @@ import TaskForm from "./TaskForm"
 import TaskListItem from "./TaskListItem";
 // Nhập component TaskListItem để sử dụng
 import EditTask from "./EditTask";
+// Nhập component EditTask để sử dụng
+import { v4 as uuidv4 } from "uuid";
+// Nhập thư viện uuid để tạo id duy nhất
 
 function TaskApp() {
 // Tạo function TaskApp
 
     const [tasks, setTasks] = useState([
-        { id: 0, task: "Learn JavaScript", status: true},
-        { id: 1, task: "Learn React", status: false}
+        { id: uuidv4(), task: "Learn JavaScript", status: true},
+        { id: uuidv4(), task: "Learn React", status: false}
     ]);
     // Tạo useState:
     // + tasks: Trạng thái ban đầu có mảng chứa 2 Object
@@ -23,6 +26,8 @@ function TaskApp() {
     // + editTask: Để lưu id công việc hiện tại đang được chỉnh sửa, giá trị ban đầu là null (không có công việc nào đang được chỉnh sửa)
 
     const addTask = (newTask) => {
+        newTask.id = uuidv4();
+        //Sau khi nhận được công việc (newTask) từ tham số truyền vào, dòng mã này gán một giá trị ID duy nhất cho newTask bằng cách gọi uuidv4()
         setTasks([...tasks, newTask]);
     }
     // Tạo hàm addTask nhận tham số newTask
@@ -42,7 +47,7 @@ function TaskApp() {
         const updatedTasks = tasks.map((task) => {
     // Lặp qua từng phần tử trong mảng và trả về một mảng mới sau khi mỗi tử trong mảng tasks được truyền vào hàm callback dưới dạng task
             if(task.id === taskId) {
-            // Nếu id của phần tử hiện tại bằng với id khi hàm được thi
+            // Nếu id của phần tử hiện tại bằng với id khi hàm được thực thi
                 task.status = !task.status
                 // Đảo ngược trạng thái: true đổi thành false và ngược lại
             }
@@ -100,7 +105,7 @@ function TaskApp() {
             <ul>
             {/* Tạo danh sách */}
                 {tasks.map((task) => (
-                // Lặp qua từng phần tử trong tasks và hiển thị. Trong đó t là mỗi Object trong mảng
+                // Lặp qua từng phần tử trong tasks và hiển thị. Trong đó task là mỗi Object trong mảng
                    <div key={task.id}>
                     {/* Để theo dõi từng id */}
                         {editTask === task.id ? (

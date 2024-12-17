@@ -26,11 +26,11 @@ function EditTask({ task, onUpdate, onCancel }) {
         onUpdate(task.id, newTasks);
         // Gọi hàm onUpdate được truyền từ component cha để cập nhập công việc:
         // + task.id: id của công việc cần cập nhập (xác định công việc cần thay đổi)
-        // + newTasks: Giá trị mới mà dùng nhập vào
+        // + newTasks: Giá trị mới mà người dùng nhập vào
     };
 
     return (
-        <form className="EditTask" onSubmit={handleSubmit}>
+        <form className="edit-task" onSubmit={handleSubmit}>
         {/* Hiển thị biểu mẫu để người dùng nhập và chỉnh sửa công việc */}
         {/* onSubmit={handleSubmit}: Gọi hàm handleSubmit khi người dùng click button Save */}
             <input

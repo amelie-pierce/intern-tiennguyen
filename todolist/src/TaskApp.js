@@ -96,7 +96,7 @@ function TaskApp() {
 
 
     return (
-        <div className="TaskList">
+        <div className="task-list">
         {/* Thẻ chứa toàn bộ nội dung  */}
             <h1>Task App</h1>
             {/* Tiêu đề  */}

@@ -32,7 +32,7 @@ function TaskForm({onAddTask}) {
     }
 
     return(
-        <form className="FormTask" onSubmit={handleSubmit}>
+        <form className="task-form" onSubmit={handleSubmit}>
         {/* Hiển thị biểu mẫu để người dùng nhập và thêm công việc */}
         {/*  Hàm handleSubmit để xử lý sự kiện khi người dùng nhấn nút Add */}
             <label htmlFor="task">New Task</label>

@@ -3,6 +3,7 @@ import React, { useState} from "react";
 // useState: Hook để quản lý trạng thái trong function
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
+import "./TaskForm.css"
 
 function TaskForm({onAddTask}) {
 // Tạo function TaskForm và truyền props:
@@ -38,7 +39,8 @@ function TaskForm({onAddTask}) {
             <label htmlFor="task">New Task</label>
             {/* Hiển thị nhãn cho ô inout */}
             {/* htmlFor: Kết nối nhãn với ô input có id: task (Khi click vào chữ "New Task" thì tự nhảy tới ô input) */}
-            <input 
+            <div className="form">
+                <input 
                 id="task" 
                 // Đặt id để kết nối với thẻ <label></label>
                 type="text" 
@@ -52,6 +54,7 @@ function TaskForm({onAddTask}) {
             />
             <button type="submit">Add</button>
              {/* type="submit": Loại nút submit để kích hoạt sự kiện onSubmit của form */}
+            </div>
         </form>
     );
 }

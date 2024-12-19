@@ -10,13 +10,13 @@ import EditTask from "./EditTask";
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
 import "./TaskApp.css";
-import SaveTask from "./SaveTask";
+import useReloadTask from "./ReloadTask";
 // Thêm CSS
 
 function TaskApp() {
 // Tạo function TaskApp
 
-    const [tasks, setTasks] = SaveTask("tasks",[
+    const [tasks, setTasks] = useReloadTask("tasks",[
     // "tasks": là key để lưu hoặc lấy dữ liệu từ localStorage. Tất cả dữ liệu sẽ được lưu dưới khóa "tasks"
     // []: Là giá trị mặc định (initial value), được sử dụng nếu localStorage không chứa dữ liệu cho khóa "tasks"
         { id: uuidv4(), task: "Learn JavaScript", status: true},

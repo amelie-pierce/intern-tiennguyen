@@ -1,0 +1,56 @@
+.edit-task {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    margin-top: 10px;
+    width: 390px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.edit-task input[type="text"] {
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.edit-task input[type="text"]:focus {
+    border-color: #ddd;
+}
+
+.edit-task button {
+    font-size: 16px;
+    height: 40px;
+    width: 70px;
+    margin-left: 5px;
+    border: none;
+    background-color: #7f8480;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-task button[type="submit"] {
+    background-color: #7a7878;
+    color: white;
+}
+
+.edit-task button[type="submit"]:hover {
+    background-color: #333;
+}
+
+.edit-task button[type="button"] {
+    background-color: #d82db3;
+    color: white;
+}
+
+.edit-task button[type="button"]:hover {
+    background-color: #b1589d;
+}

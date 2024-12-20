@@ -4,6 +4,7 @@ import React, { useState} from "react";
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
 import "./TaskForm.css"
+// Nhập file CSS
 
 function TaskForm({onAddTask}) {
 // Tạo function TaskForm và truyền props:

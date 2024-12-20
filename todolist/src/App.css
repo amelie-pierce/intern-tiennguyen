@@ -1,14 +1,7 @@
 .App {
   text-align: center;
   width: 100%;
-  padding: 50px;
 }
-div{
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

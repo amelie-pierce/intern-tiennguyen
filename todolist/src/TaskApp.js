@@ -10,8 +10,9 @@ import EditTask from "./EditTask";
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
 import "./TaskApp.css";
-import useReloadTask from "./ReloadTask";
 // Thêm CSS
+import useReloadTask from "./useReloadTask";
+//Nhập custom hook để sử dụng
 
 function TaskApp() {
 // Tạo function TaskApp

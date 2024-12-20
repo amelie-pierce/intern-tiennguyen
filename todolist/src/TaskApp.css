@@ -1,12 +1,12 @@
 .task-app{
-    display: flex;
-    max-width: 600px;
-    width: 100%;
-    margin: 100px auto 20px;
-    flex-direction: column;
+    display: flex; /* Dùng flexbox để sắp xếp phần tử con */
+    justify-content: space-between; /* Căn chỉnh các phần tử con với khoảng cách đều */
+    align-items: center; /* Căn giữa các phần tử theo trục dọc */
+    max-width: 600px; /* Chiều rộng tối đa */
+    width: 100%; /* Chiếm toàn bộ chiều ngang */
+    margin: 50px auto; /* Chiếm khoảng cách trên dưới và giữa theo chiều ngang */
+    flex-direction: column; /* Sắp xếp phần tử theo cột */
     background-color: #fff;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 20px;
 }
 .task-app h1{
@@ -23,7 +23,6 @@
 hr { 
     width: 70%; 
     height: 1px; 
-    margin: 15px auto;
     background: #aaa 
 }
 ul {
@@ -35,15 +34,9 @@ ul li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px;
     background-color: #fff;
     margin: 8px 0;
     border-radius: 4px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    word-break: break-word;
-}
-
-ul li.completed {
-    background-color: #d4edda;
-    color: #155724;
+    word-break: break-word; /* Tự động xuống dòng nếu nội dung quá dài */
 }

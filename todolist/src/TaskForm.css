@@ -1,49 +1,51 @@
 .task-form{
-    display: flex;
+    display: flex; /* Tạo flexbox để sắp xếp các phần tử */
     flex-direction: column;
-    align-items: center;
-    width: 300px;
-    max-width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    align-items: center; /* Căn giữa các phần tử con theo chiều ngang. */
+    justify-content: center; /* Căn giữa các phần tử con theo chiều dọc. */
+    margin: 0 auto;
+    padding: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     background-color: #fff;
     border-radius: 8px;
+    box-sizing: border-box;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 label{
-    margin: 10px;
     font-size: 16px;
+    text-align: center;
 }
 .form{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 10px; /* Thêm khoảng cách giữa các phần tử con. */
 }
 .task-form input[type="text"] {
-    height: 20px;
-    max-width: 360px;
-    padding: 5px;
+    height: 30px;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px 0;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
+    box-sizing: border-box; /* Bao gồm cả viền và padding khi tính kích thước. */
+    outline: none; /* Loại bỏ viền mặc định khi ô input được chọn. */
 }
 .task-form input[type="text"]:focus {
     border-color: #3d3d3d;
 }
 .task-form button{
     font-size: 16px;
-    height: 30px;
+    height: auto;
     width: 70px;
-    padding: 5px;
-    margin-left: 10px;
+    margin: 10px 5px;
     border: none;
     background-color: #7f8480;
     color: white;
     border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 .task-form button:hover{
     background-color: #218838;

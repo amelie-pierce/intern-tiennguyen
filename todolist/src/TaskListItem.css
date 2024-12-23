@@ -1,0 +1,29 @@
+.task-list-item{
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử con theo chiều dọc. */
+    justify-content: center; /* Căn giữa các phần tử con theo chiều ngang. */
+    margin: 0 auto; 
+    width: 100%;
+    max-width: 350px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    gap: 10px; /* Thêm khoảng cách giữa các phần tử con */
+}
+.task-list-item input[type="checkbox"] {
+    margin-right: 10px;
+    flex-shrink: 0;  /* Ngăn không cho checkbox bị thu nhỏ khi phần tử chứa bị thu hẹp. */
+}
+.task-list-item li{
+    flex-grow: 1;
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 5px;
+    word-break: break-word; /* Đảm bảo từ dài sẽ xuống dòng */
+    white-space: normal;    /* Cho phép xuống dòng */
+}
+img {
+    width: 30px;
+    height: 30px;
+    margin: 5px; /* Thêm khoảng cách xung quanh */
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./TaskListItem.css";
 // React: Nhập thư viện React để sử dụng tính năng React trong component
 
 function TaskListItem({ task, onRemoveTask, onToggleTaskStatus, onEdit }) {
@@ -6,6 +7,7 @@ function TaskListItem({ task, onRemoveTask, onToggleTaskStatus, onEdit }) {
 // + task: Object chứa thông tin của một công việc: id: , task, status: 
 // + onRemoveTask: Hàm callback để xóa công việc
 // + onToggleTaskStatus: Hàm callback để thay đổi trạng thái công việc
+// + onEdit: Bắt đầu chỉnh sửa công việc
     return (
         <div className="task-list-item">
             <input 

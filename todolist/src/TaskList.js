@@ -9,17 +9,24 @@ import EditTask from "./EditTask";
 // Nhập component EditTask để sử dụng
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
+import "./TaskList.css";
+// Thêm CSS
+import useTaskStorage from "./useTaskStorage";
+//Nhập custom hook để sử dụng
 
-function TaskApp() {
+function TaskList() {
 // Tạo function TaskApp
 
-    const [tasks, setTasks] = useState([
+    const [tasks, setTasks] = useTaskStorage("tasks",[
+    // Custom hook quản lý trạng thái lưu trữ vào localStorage
+    // + "tasks": Key sử dụng trong localStorage để lưu trạng thái
+    // [{...}, {...}]: Giá trị mặc định nếu không tìm thấy dữ liệu trong localStorage
         { id: uuidv4(), task: "Learn JavaScript", status: true},
         { id: uuidv4(), task: "Learn React", status: false}
     ]);
     // Tạo useState:
-    // + tasks: Trạng thái ban đầu có mảng chứa 2 Object
-    // + setTasks: Hàm để cập nhập trạng thái task
+    // + tasks: Trạng thái hiện tại, lưu danh sách (tasks.). Nó lấy từ localStorage hoặc giá trị mặc định
+    // + setTasks: Giá trị này được lưu trữ vào localStorage để duy trì qua các lần reload page
 
     const [editTask, setEditTask] = useState(null);
     // Tạo useState:
@@ -45,7 +52,7 @@ function TaskApp() {
     const toggleTaskStatus = (taskId) => {
     // Tạo hàm toggleTaskStatus nhận tham số taskId
         const updatedTasks = tasks.map((task) => {
-    // Lặp qua từng phần tử trong mảng và trả về một mảng mới sau khi mỗi tử trong mảng tasks được truyền vào hàm callback dưới dạng task
+    // Lặp qua từng phần tử trong mảng và trả về một mảng mới sau khi mỗi phần tử trong mảng tasks được truyền vào hàm callback dưới dạng task
             if(task.id === taskId) {
             // Nếu id của phần tử hiện tại bằng với id khi hàm được thực thi
                 task.status = !task.status
@@ -96,12 +103,13 @@ function TaskApp() {
 
 
     return (
-        <div className="task-list">
+        <div className="task-app">
         {/* Thẻ chứa toàn bộ nội dung  */}
-            <h1>Task App</h1>
+            <h1>Task List</h1>
             {/* Tiêu đề  */}
-            <span>Task Checking Application</span>
+            <span>A Simple React Task List</span> <hr/> 
             {/* Phụ đề */}
+            {/* thẻ <hr> để tạo đường line */}
             <ul>
             {/* Tạo danh sách */}
                 {tasks.map((task) => (
@@ -142,5 +150,5 @@ function TaskApp() {
     );
 }
 
-export default TaskApp;
+export default TaskList;
 // Xuất component dưới dạng mặc định từ file hiện tại

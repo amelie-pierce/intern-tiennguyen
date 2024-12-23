@@ -1,0 +1,54 @@
+.task-form{
+    display: flex; /* Tạo flexbox để sắp xếp các phần tử */
+    flex-direction: column;
+    align-items: center; /* Căn giữa các phần tử con theo chiều ngang. */
+    justify-content: center; /* Căn giữa các phần tử con theo chiều dọc. */
+    margin: 0 auto;
+    padding: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+label{
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px; /* Thêm khoảng cách giữa các phần tử con. */
+}
+.task-form input[type="text"] {
+    height: 30px;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Bao gồm cả viền và padding khi tính kích thước. */
+    outline: none; /* Loại bỏ viền mặc định khi ô input được chọn. */
+}
+.task-form input[type="text"]:focus {
+    border-color: #3d3d3d;
+}
+.task-form button{
+    font-size: 16px;
+    height: auto;
+    width: 70px;
+    margin: 10px 5px;
+    border: none;
+    background-color: #7f8480;
+    color: white;
+    border-radius: 4px;
+}
+.task-form button:hover{
+    background-color: #218838;
+}

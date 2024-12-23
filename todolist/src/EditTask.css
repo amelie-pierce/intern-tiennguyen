@@ -1,0 +1,53 @@
+.edit-task {
+    display: flex; /* Dùng flexbox để sắp xếp các phần tử con theo 1 hàng , cột */
+    flex-direction: row; /* Sắp xép theo hàng ngang */
+    margin-top: 10px; 
+    width: 100%; /* Chiều rộng chiếm toàn bộ không gian */
+    max-width: 350px; /* Chiều rộng tối đa */
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.edit-task input[type="text"] { 
+    height: 20px;
+    width: 100%;
+    max-width: 200px; /* Chiều rộng tối đa */
+    padding: 5px; /* Thêm khoảng cách bên trong giữa nội dung và viền */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none; /* Loại bỏ đường viền mặc định khi nhấn vào */
+}
+
+.edit-task input[type="text"]:focus {
+    border-color: #ddd;
+}
+
+.edit-task button {
+    font-size: 16px;
+    height: auto;
+    width: 70px;
+    margin-left: 5px; /* Khoảng cách bên trái */
+    background-color: #7f8480;
+    color: white;
+    border-radius: 4px;
+}
+
+.edit-task button[type="submit"] {
+    background-color: #7a7878;
+    color: white;
+}
+
+.edit-task button[type="submit"]:hover {
+    background-color: #333;
+}
+
+.edit-task button[type="button"] {
+    background-color: #c95e5e;
+    color: white;
+}
+
+.edit-task button[type="button"]:hover {
+    background-color: #d391a1;
+}

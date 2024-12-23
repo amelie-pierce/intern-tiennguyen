@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // React: Nhập thư viện React để sử dụng tính năng React trong component
-
+import "./EditTask.css"
+// Nhập file CSS
 function EditTask({ task, onUpdate, onCancel }) {
 // Tạo function EditTask và nhận 3 props: 
 // + task: công việc muốn chỉnh sửa

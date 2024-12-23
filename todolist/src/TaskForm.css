@@ -10,7 +10,7 @@
     height: auto;
     background-color: #fff;
     border-radius: 8px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Bao gồm cả viền và padding khi tính kích thước. */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 label{
@@ -21,7 +21,7 @@ label{
 }
 .form{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Sắp xếp phần tử theo chiều ngang */
     justify-content: center;
     gap: 10px; /* Thêm khoảng cách giữa các phần tử con. */
 }

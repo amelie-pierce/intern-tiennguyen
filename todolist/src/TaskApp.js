@@ -9,17 +9,24 @@ import EditTask from "./EditTask";
 // Nhập component EditTask để sử dụng
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
+import "./TaskApp.css";
+// Thêm CSS
+import useReloadTask from "./useReloadTask";
+//Nhập custom hook để sử dụng
 
 function TaskApp() {
 // Tạo function TaskApp
 
-    const [tasks, setTasks] = useState([
+    const [tasks, setTasks] = useReloadTask("tasks",[
+    // Custom hook quản lý trạng thái lưu trữ vào localStorage và được truyền hai tham số:
+    // + "tasks": Key sử dụng trong localStorage để lưu trạng thái
+    // [{...}, {...}]: Giá trị mặc định nếu không tìm thấy dữ liệu trong localStorage
         { id: uuidv4(), task: "Learn JavaScript", status: true},
         { id: uuidv4(), task: "Learn React", status: false}
     ]);
     // Tạo useState:
-    // + tasks: Trạng thái ban đầu có mảng chứa 2 Object
-    // + setTasks: Hàm để cập nhập trạng thái task
+    // + tasks: Trạng thái hiện tại, lưu danh sách (tasks.). Nó lấy từ localStorage hoặc giá trị mặc định
+    // + setTasks: Giá trị này được lưu trữ vào localStorage để duy trì qua các lần reload page
 
     const [editTask, setEditTask] = useState(null);
     // Tạo useState:
@@ -96,12 +103,13 @@ function TaskApp() {
 
 
     return (
-        <div className="task-list">
+        <div className="task-app">
         {/* Thẻ chứa toàn bộ nội dung  */}
             <h1>Task App</h1>
             {/* Tiêu đề  */}
-            <span>Task Checking Application</span>
+            <span>Task Checking Application</span> <hr/> 
             {/* Phụ đề */}
+            {/* thẻ <hr> để tạo đường line */}
             <ul>
             {/* Tạo danh sách */}
                 {tasks.map((task) => (

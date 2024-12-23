@@ -9,16 +9,16 @@ import EditTask from "./EditTask";
 // Nhập component EditTask để sử dụng
 import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
-import "./TaskApp.css";
+import "./TaskList.css";
 // Thêm CSS
 import useReloadTask from "./useReloadTask";
 //Nhập custom hook để sử dụng
 
-function TaskApp() {
+function TaskList() {
 // Tạo function TaskApp
 
     const [tasks, setTasks] = useReloadTask("tasks",[
-    // Custom hook quản lý trạng thái lưu trữ vào localStorage và được truyền hai tham số:
+    // Custom hook quản lý trạng thái lưu trữ vào localStorage
     // + "tasks": Key sử dụng trong localStorage để lưu trạng thái
     // [{...}, {...}]: Giá trị mặc định nếu không tìm thấy dữ liệu trong localStorage
         { id: uuidv4(), task: "Learn JavaScript", status: true},
@@ -52,7 +52,7 @@ function TaskApp() {
     const toggleTaskStatus = (taskId) => {
     // Tạo hàm toggleTaskStatus nhận tham số taskId
         const updatedTasks = tasks.map((task) => {
-    // Lặp qua từng phần tử trong mảng và trả về một mảng mới sau khi mỗi tử trong mảng tasks được truyền vào hàm callback dưới dạng task
+    // Lặp qua từng phần tử trong mảng và trả về một mảng mới sau khi mỗi phần tử trong mảng tasks được truyền vào hàm callback dưới dạng task
             if(task.id === taskId) {
             // Nếu id của phần tử hiện tại bằng với id khi hàm được thực thi
                 task.status = !task.status
@@ -105,9 +105,9 @@ function TaskApp() {
     return (
         <div className="task-app">
         {/* Thẻ chứa toàn bộ nội dung  */}
-            <h1>Task App</h1>
+            <h1>Task List</h1>
             {/* Tiêu đề  */}
-            <span>Task Checking Application</span> <hr/> 
+            <span>A Simple React Task List</span> <hr/> 
             {/* Phụ đề */}
             {/* thẻ <hr> để tạo đường line */}
             <ul>
@@ -150,5 +150,5 @@ function TaskApp() {
     );
 }
 
-export default TaskApp;
+export default TaskList;
 // Xuất component dưới dạng mặc định từ file hiện tại

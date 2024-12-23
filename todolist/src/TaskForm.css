@@ -16,6 +16,8 @@
 label{
     font-size: 16px;
     text-align: center;
+    color: #333;
+    font-weight: bold;
 }
 .form{
     display: flex;

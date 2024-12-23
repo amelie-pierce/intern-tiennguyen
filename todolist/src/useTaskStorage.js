@@ -1,8 +1,8 @@
 import {useState} from 'react';
 // React: Nhập thư viện React để sử dụng tính năng React trong component
 
-function useReloadTask(tasks, initialValue) {
-// Khai báo custom hook tên SaveTask => Lưu trữ trạng thái vào localStorage và tự đồng bộ khi trạng thái thay đổi
+function useReloadPage(tasks, initialValue) {
+// Khai báo custom hook tên useReloadPage => Lưu trữ trạng thái vào localStorage và tự đồng bộ khi trạng thái thay đổi
 // key: Là một chuỗi giá trị lưu trữ cho khóa duy nhất
 // initialValue: Giá trị ban đầu được lưu trữ nếu chưa có giá trị nào tồn tại với key
 
@@ -28,4 +28,4 @@ function useReloadTask(tasks, initialValue) {
     // + saveState: Hàm để cập nhập trạng thái và đồng bộ với localStorage
 }
 
-export default useReloadTask;
+export default useReloadPage;

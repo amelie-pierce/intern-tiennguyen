@@ -11,13 +11,13 @@ import { v4 as uuidv4 } from "uuid";
 // Nhập thư viện uuid để tạo id duy nhất
 import "./TaskList.css";
 // Thêm CSS
-import useReloadTask from "./useReloadTask";
+import useTaskStorage from "./useTaskStorage";
 //Nhập custom hook để sử dụng
 
 function TaskList() {
 // Tạo function TaskApp
 
-    const [tasks, setTasks] = useReloadTask("tasks",[
+    const [tasks, setTasks] = useTaskStorage("tasks",[
     // Custom hook quản lý trạng thái lưu trữ vào localStorage
     // + "tasks": Key sử dụng trong localStorage để lưu trạng thái
     // [{...}, {...}]: Giá trị mặc định nếu không tìm thấy dữ liệu trong localStorage

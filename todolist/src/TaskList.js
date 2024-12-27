@@ -35,7 +35,7 @@ function TaskList() {
     const addTask = (newTask) => {
         newTask.id = uuidv4();
         //Sau khi nhận được công việc (newTask) từ tham số truyền vào, dòng mã này gán một giá trị ID duy nhất cho newTask bằng cách gọi uuidv4()
-        setTasks([...tasks, newTask]);
+        setTasks([...tasks, newTask]); 
     }
     // Tạo hàm addTask nhận tham số newTask
     // setTasks: cập nhập trạng thái thêm tasks mới vào mảng
@@ -44,10 +44,10 @@ function TaskList() {
 
     const removeTask = (id) => {
         setTasks(tasks.filter(task => task.id !== id))
+         // Tạo hàm removeTask nhận tham số id
+         // setTasks: cập nhập trạng thái xóa tasks trong mảng
+        // + tasks.filter(task => task.id !== id): Trả về mảng mới chỉ chứa các phần tử đáp ứng điều kiện của hàm callback 
     }
-    // Tạo hàm removeTask nhận tham số id
-    // setTasks: cập nhập trạng thái xóa tasks trong mảng
-    // + tasks.filter(task => task.id !== id): Trả về mảng mới chỉ chứa các phần tử đáp ứng điều kiện của hàm callback 
 
     const toggleTaskStatus = (taskId) => {
     // Tạo hàm toggleTaskStatus nhận tham số taskId
@@ -101,6 +101,11 @@ function TaskList() {
         // Khi thực thi thì nó đặt lại trạng thái editTask về null, kết thúc chỉnh sửa mà không thay đổi gì
     }
 
+    const resetTask = () => {
+        localStorage.removeItem("tasks")
+        setTasks([]);
+    }
+
 
     return (
         <div className="task-app">
@@ -110,6 +115,7 @@ function TaskList() {
             <span>A Simple React Task List</span> <hr/> 
             {/* Phụ đề */}
             {/* thẻ <hr> để tạo đường line */}
+            <button onClick={resetTask}>Reset Task</button>
             <ul>
             {/* Tạo danh sách */}
                 {tasks.map((task) => (

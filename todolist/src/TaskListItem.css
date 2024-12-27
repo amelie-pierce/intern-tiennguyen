@@ -2,7 +2,7 @@
     display: flex;
     align-items: center; /* Căn giữa các phần tử con theo chiều dọc. */
     justify-content: center; /* Căn giữa các phần tử con theo chiều ngang. */
-    margin: 5px auto; 
+    margin: 0 auto; 
     width: 100%;
     max-width: 350px;
     background-color: #f9f9f9;
@@ -20,7 +20,7 @@
     margin: 20px 0;
     padding: 5px;
     word-break: break-word; /* Đảm bảo từ dài sẽ xuống dòng */
-    white-space: normal;    /* Cho phép xuống dòng */
+    white-space: pre-wrap;  /* Giữ nguyên khoảng trắng và dòng mới trong nội dung */
 }
 img {
     width: 30px;

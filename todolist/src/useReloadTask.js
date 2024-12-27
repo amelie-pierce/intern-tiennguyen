@@ -1,9 +1,13 @@
 import {useState} from 'react';
 // React: Nhập thư viện React để sử dụng tính năng React trong component
 
-
+<<<<<<<< HEAD:todolist/src/useTaskStorage.js
 function useTaskStorage(tasks, initialValue) {
 // Khai báo custom hook tên useTaskStorage => Lưu trữ trạng thái vào localStorage và tự đồng bộ khi trạng thái thay đổi
+========
+function useReloadTask(tasks, initialValue) {
+// Khai báo custom hook tên SaveTask => Lưu trữ trạng thái vào localStorage và tự đồng bộ khi trạng thái thay đổi
+>>>>>>>> 3214a0b (Rename custom hooks, comment code CSS files of each component):todolist/src/useReloadTask.js
 // key: Là một chuỗi giá trị lưu trữ cho khóa duy nhất
 // initialValue: Giá trị ban đầu được lưu trữ nếu chưa có giá trị nào tồn tại với key
 

@@ -22,7 +22,7 @@ function EditTask({ task, onUpdate, onCancel }) {
     // Hàm xử lý sự kiện khi người dùng gửi form ( click button Save )
         event.preventDefault();
         // Ngăn reload trang khi gửi form
-        if (newTasks.trim() === "") return;
+        if (newTasks === "") return;
         // Nếu task chỉ chứa khoảng trắng thì dừng sự kiện ( không thêm được )
         onUpdate(task.id, newTasks);
         // Gọi hàm onUpdate được truyền từ component cha để cập nhập công việc:
@@ -45,7 +45,8 @@ function EditTask({ task, onUpdate, onCancel }) {
                 // Hiển thị văn bản Edit Task trong input khi không có gì
             />
             <button type="submit">Save</button>
-            {/* Gọi hàm handleSubmit để lau các thay đổi khi người dùng click button Save */}
+            {/* type="submit": Chỉ định rằng nút này có nhiệm vụ gửi biểu mẫu (form). Khi người dùng bấm vào nút này */}
+            {/* Sự kiện onSubmit của thẻ <form> được kích hoạt. */}
             <button type="button" onClick={onCancel}>Cancel</button>
             {/* Gọi hàm cancel để huy chỉnh sửa khi người dùng click button Cancel */}
         </form>

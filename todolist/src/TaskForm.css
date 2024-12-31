@@ -1,3 +1,4 @@
+
 .task-form{
     display: flex; /* Tạo flexbox để sắp xếp các phần tử */
     flex-direction: column;
@@ -26,15 +27,18 @@ label{
     gap: 10px; /* Thêm khoảng cách giữa các phần tử con. */
 }
 .task-form input[type="text"] {
+    white-space: pre-wrap;
     height: 30px;
     width: 100%;
     max-width: 200px;
+    padding: 0 10px;
     margin: 10px 0;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box; /* Bao gồm cả viền và padding khi tính kích thước. */
     outline: none; /* Loại bỏ viền mặc định khi ô input được chọn. */
+    text-align: left;
 }
 .task-form input[type="text"]:focus {
     border-color: #3d3d3d;

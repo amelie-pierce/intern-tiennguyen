@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 // React: Nhập thư viện React để sử dụng tính năng React trong component
 // useState: Hook để quản lý trạng thái trong function
 import { v4 as uuidv4 } from "uuid";
@@ -18,6 +18,8 @@ function TaskForm({onAddTask}) {
         // Lấy giá trị mới từ ô input
     };
     // Xử lý sự kiện khi người dùng nhập vào ô input
+
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();

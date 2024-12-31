@@ -21,8 +21,9 @@
 }
 
 .edit-task input[type="text"]:focus {
-    border-color: #ddd;
+    border-color: #333;
 }
+/* Khi nhập thì đường viền ô input sẽ tô đen */
 
 .edit-task button {
     font-size: 16px;
@@ -42,6 +43,7 @@
 .edit-task button[type="submit"]:hover {
     background-color: #333;
 }
+/* Di chuyển chuột vào sẽ đổi màu */
 
 .edit-task button[type="button"] {
     background-color: #c95e5e;

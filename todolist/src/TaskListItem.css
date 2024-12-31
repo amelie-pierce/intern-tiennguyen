@@ -20,7 +20,7 @@
     margin: 20px 0;
     padding: 5px;
     word-break: break-word; /* Đảm bảo từ dài sẽ xuống dòng */
-    white-space: normal;    /* Cho phép xuống dòng */
+    white-space: pre-wrap;  /* Giữ nguyên khoảng trắng và dòng mới trong nội dung */
 }
 img {
     width: 30px;

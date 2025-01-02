@@ -1,5 +1,5 @@
 
-function CustomFilter(tasks, remove){
+function customFilter(tasks, remove){
     // Hàm thay thế cho phương thức Array.filter()
     // tasks: Mảng các công việc
     // remove: Hàm callback để kiểm tra điều kiện
@@ -26,4 +26,22 @@ function CustomFilter(tasks, remove){
         // return newItem;
 }
 
-export default CustomFilter;
+function customMap(tasks, repeatTask){
+    // Thay thế cho phương thức Array.map()
+        const newItem = [];
+        for ( let i = 0; i < tasks.length; i++){
+            newItem.push(repeatTask(tasks[i]));
+        }
+        return newItem;
+
+        // const newItem = [];
+        // let i = 0;
+        // while (i < tasks.length) {
+        //      newItem.push(repeatTask(tasks[i]));
+        //      i++; 
+        // }
+        // return newItem;
+}
+
+
+export {customFilter, customMap};

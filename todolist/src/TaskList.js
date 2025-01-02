@@ -4,8 +4,7 @@ import TaskListItem from "./TaskListItem";
 import EditTask from "./EditTask";
 import { v4 as uuidv4 } from "uuid";
 import "./TaskList.css";
-import CustomFilter from "./utils";
-import CustomMap from "./helpers";
+import { customFilter, customMap } from "./utils";
 import useTaskStorage from "./useTaskStorage";
 
 function TaskList() {
@@ -24,11 +23,11 @@ function TaskList() {
     }  
     
     const removeTask = (id) => {
-        setTasks(CustomFilter(tasks, task => task.id !== id))
+        setTasks(customFilter(tasks, task => task.id !== id))
     }
 
     const toggleTaskStatus = (taskId) => {
-        const updatedTasks = CustomMap(tasks, (task) => {
+        const updatedTasks = customMap(tasks, (task) => {
             if(task.id === taskId) {
                 task.status = !task.status
             }
@@ -44,7 +43,7 @@ function TaskList() {
     }
 
     const updateTask = (id, updatedTask) => {
-        const updatedTasks = CustomMap(tasks, (tasks) => 
+        const updatedTasks = customMap(tasks, (tasks) => 
             tasks.id === id ? {...tasks, task: updatedTask} : tasks
         ); 
         setTasks(updatedTasks);

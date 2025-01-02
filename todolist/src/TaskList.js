@@ -39,6 +39,17 @@ function TaskList() {
             }
         }
         return newItem;
+
+        // Dùng vòng lặp while: 
+        // const newItem = [];
+        // let i = 0;
+        // while (i < tasks.length) {
+        //  if (remove(tasks[i])) {
+        //      newItem.push(tasks[i]);
+        //  }
+        //  i++;
+        // }
+        // return newItem;
     }
 
     const map = (tasks, repeatTask) => {
@@ -48,6 +59,14 @@ function TaskList() {
             newItem.push(repeatTask(tasks[i]));
         }
         return newItem;
+
+        // const newItem = [];
+        // let i = 0;
+        // while (i < tasks.length) {
+        //      newItem.push(repeatTask(tasks[i]));
+        //      i++; 
+        // }
+        // return newItem;
     }
 
     const toggleTaskStatus = (taskId) => {

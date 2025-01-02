@@ -1,6 +1,4 @@
 import {useState} from 'react';
-// React: Nhập thư viện React để sử dụng tính năng React trong component
-
 
 function useTaskStorage(tasks, initialValue) {
 // Khai báo custom hook tên useTaskStorage => Lưu trữ trạng thái vào localStorage và tự đồng bộ khi trạng thái thay đổi

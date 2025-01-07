@@ -1,35 +1,39 @@
 .edit-task {
-    display: flex; /* Dùng flexbox để sắp xếp các phần tử con theo 1 hàng , cột */
-    flex-direction: row; /* Sắp xép theo hàng ngang */
+    display: flex; 
+    flex-direction: row; 
     margin-top: 10px; 
-    width: 100%; /* Chiều rộng chiếm toàn bộ không gian */
-    max-width: 350px; /* Chiều rộng tối đa */
+    width: 100%;
+    height: 50px;
+    max-width: 350px;
     background-color: #fff; 
     border-radius: 8px; 
     box-shadow: 0 2px 8px #ddd;
 }
 
 .edit-task input[type="text"] { 
-    height: 20px;
+    white-space: pre-wrap;
+    height: 30px;
     width: 100%;
-    max-width: 200px; /* Chiều rộng tối đa */
-    padding: 5px; /* Thêm khoảng cách bên trong giữa nội dung và viền */
+    max-width: 200px;
+    padding: 0 10px;
+    margin: 10px 5px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    outline: none; /* Loại bỏ đường viền mặc định khi nhấn vào */
+    box-sizing: border-box; /* Bao gồm cả viền và padding khi tính kích thước. */
+    outline: none; /* Loại bỏ viền mặc định khi ô input được chọn. */
+    text-align: left;
 }
 
 .edit-task input[type="text"]:focus {
     border-color: #333;
 }
-/* Khi nhập thì đường viền ô input sẽ tô đen */
 
 .edit-task button {
-    font-size: 16px;
-    height: auto;
+    font-size: 14px;
+    height: 30px;
     width: 70px;
-    margin-left: 5px; /* Khoảng cách bên trái */
+    margin: 10px 5px; 
     background-color: #7f8480;
     color: white;
     border-radius: 4px;
@@ -43,7 +47,6 @@
 .edit-task button[type="submit"]:hover {
     background-color: #333;
 }
-/* Di chuyển chuột vào sẽ đổi màu */
 
 .edit-task button[type="button"] {
     background-color: #c95e5e;

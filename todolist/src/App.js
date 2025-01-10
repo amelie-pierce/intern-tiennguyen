@@ -14,6 +14,7 @@ function App() {
     deleteTask,
     toggleTask
   } = useTaskStorage();
+  // Gọi custom hook để truy cập các trạng thái và phương thức để quản lý task
 
   return (
     <div className="app">

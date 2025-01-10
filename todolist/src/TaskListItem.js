@@ -9,6 +9,7 @@ function TaskListItem({ task, onToggle, onUpdate, onDelete }) {
         if (!editTitle.trim()) return;
         try {
             await onUpdate(task.id, {
+            // Gọi hàm onUpdate với task.ì và object có tiêu đề mới
                 title: editTitle
             });
             setIsEditing(false);
@@ -35,7 +36,7 @@ function TaskListItem({ task, onToggle, onUpdate, onDelete }) {
     }
 
     return (
-        <div className={`task-item ${task.completed ? 'completed' : ''}`}>
+        <div className="task-item">
             <div className="task-content">
                 <input
                     type="checkbox"

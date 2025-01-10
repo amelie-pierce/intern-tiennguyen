@@ -6,6 +6,7 @@ function TaskList({ tasks, loading, error, onToggle, onUpdate, onDelete }) {
 
 
     if (loading) {
+    // Nếu loading true thì các task đang được tải vài giao diện sẽ hiển thị như dưới
         return <div className="task-list-message">Loading tasks...</div>;
     }
 
@@ -14,7 +15,7 @@ function TaskList({ tasks, loading, error, onToggle, onUpdate, onDelete }) {
     }
 
     if (tasks.length === 0) {
-        return <div className="task-list-message">No tasks yet. Add one above!</div>;
+        return <div className="task-list-message">No tasks yet</div>;
     }
 
     return (

@@ -1,30 +1,102 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
+import { db } from './libs/firebase';
+import {
+    collection,
+    addDoc,
+    deleteDoc,
+    doc,
+    updateDoc,
+    onSnapshot,
+    serverTimestamp,
+    query,
+    orderBy
+} from 'firebase/firestore';
 
-function useTaskStorage(tasks, initialValue) {
-// Khai báo custom hook tên useTaskStorage => Lưu trữ trạng thái vào localStorage và tự đồng bộ khi trạng thái thay đổi
-// key: Là một chuỗi giá trị lưu trữ cho khóa duy nhất
-// initialValue: Giá trị ban đầu được lưu trữ nếu chưa có giá trị nào tồn tại với key
+export function useTaskStorage() {
+    const [tasks, setTasks] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    const storedValue = localStorage.getItem(tasks);
-    // Kiểm tra giá trị khóa key trong localStorage => Nếu tìm thấy thì trả về giá trị dưới dạng string. Nếu không tìm thấy thì trả về null
+    useEffect(() => {
+        const q = query(collection(db, 'tasks'), orderBy('createdAt', 'asc'));
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+          
+            const tasksData = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data(),
+                createdAt: doc.data().createdAt?.toDate() || new Date()
+            }));
+            setTasks(tasksData);
+            setLoading(false);
 
-    const [state, setState] = useState(storedValue ? JSON.parse(storedValue) : initialValue);
-    // Nếu storedValue tồn tại, dùng giá trị đã lưu JSON.parse ( chuyển chuỗi JSON thành kiểu dữ liễu object)
+            //  const tasksData = [];
+            //     const docs = snapshot.docs;
+            //     // Kết quả của mảng chứa CSDL các documents từ FS được truy vấn
+            //     for (let i = 0; i < docs.length; i++) {
+            //     // Vòng lặp duyệt qua từng document trong mảng
+            //         const docData = docs[i].data();
+            //         // Lấy dữ liệu tại vị trí i và trả về như title, complete
+            //         tasksData.push({
+            //             id: docs[i].id,
+            //             ...docData,
+            //             createdAt: docData.createdAt?.toDate() || new Date()
+            //         });
+            //     }
 
-    const saveState = (newState) => {
-    //Khai báo hàm saveState để cập nhập trạng thái và đồng bộ hóa dữ liệu mới vào localStorage
-        setState(newState);
-        // Cập nhập trạng thái của state với giá trị mới (newState) 
-        localStorage.setItem(tasks, JSON.stringify(newState));
-        // Lưu newState vào localStorage dưới dạng chuỗi JSON
-        // key: khóa được sử dụng để lưu trữ giá trị
-        // Dữ liệu được chuyển thành chuỗi bằng JSON.stringify
+        }, (err) => {
+            setError('Failed to fetch tasks');
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
+    const addTask = async (title) => {
+        try {
+            const docRef = await addDoc(collection(db, 'tasks'), {
+                title,
+                completed: false,
+                createdAt: serverTimestamp()
+            });
+            return { id: docRef.id, title, completed: false };
+        } catch (err) {
+            setError('Failed to add task');
+        }
     };
 
-    return [state, saveState];
-    // Trả về một mảng gồm hai phần tử:
-    // + state: trạng thái hiện tại được lấy từ localStorage hoặc mặc định
-    // + saveState: Hàm để cập nhập trạng thái và đồng bộ với localStorage
-}
+    const updateTask = async (id, updates) => {
+        try {
+            const taskRef = doc(db, 'tasks', id);
+            await updateDoc(taskRef, updates);
+            return { id, ...updates };
+        } catch (err) {
+            setError('Failed to update task');
+        }
+    };
 
-export default useTaskStorage;
+    const deleteTask = async (id) => {
+        try {
+            await deleteDoc(doc(db, 'tasks', id));
+        } catch (err) {
+            setError('Failed to delete task');
+            throw err;
+        }
+    };
+
+    const toggleTask = async (id) => {
+        const task = tasks.find(t => t.id === id);
+        if (task) {
+            await updateTask(id, { completed: !task.completed });
+        }
+    };
+
+    return {
+        tasks,
+        loading,
+        error,
+        addTask,
+        updateTask,
+        deleteTask,
+        toggleTask
+    };
+}

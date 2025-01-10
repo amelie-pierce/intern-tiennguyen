@@ -1,41 +1,20 @@
-.task-list{
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 600px; 
-    width: 100%; 
-    margin: 50px auto; 
-    flex-direction: column; 
-    background-color: #fff;
-    border-radius: 20px;
-}
-.task-list h1{
-    font-size: 40px;
-    color: #333;
-    width: 100%;
-}
-.task-list span{
-    width: 100%;
-    font-size: 16px;
-    color: #333;
-}
-hr { 
-    width: 70%; 
-    height: 1px; 
-    background: #333 
-}
-ul {
-    list-style-type: none;
-    padding: 0;
+.task-list {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }
 
-ul li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 4px;
-    margin: 16px 0;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    word-break: break-word; /* Tự động xuống dòng nếu nội dung quá dài */
+.task-list-message {
+	text-align: center;
+	padding: 20px;
+	color: #666;
+	background-color: #f9f9f9;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+.task-list-message.error {
+	color: #721c24;
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
 }

@@ -1,0 +1,57 @@
+.edit-task {
+    display: flex; 
+    align-items: center;
+    flex-direction: row; 
+    margin: 0 auto;
+    width: 100%;
+    height: 70px;
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.edit-task input{ 
+    height: 30px;
+    width: 100%;
+    max-width: 230px;
+    padding: 0 10px;
+    margin: 10px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Bao gồm cả viền và padding khi tính kích thước. */
+    outline: none; /* Loại bỏ viền mặc định khi ô input được chọn. */
+    text-align: left;
+}
+
+.edit-task input:focus {
+    border-color: #333;
+}
+
+.edit-task button {
+    font-size: 14px;
+    height: 30px;
+    width: 70px;
+    margin: 10px 5px; 
+    background-color: #7f8480;
+    color: white;
+    border-radius: 4px;
+}
+
+.edit-task button[type="submit"] {
+    background-color: #7a7878;
+    color: white;
+}
+
+.edit-task button[type="submit"]:hover {
+    background-color: #333;
+}
+
+.edit-task button[type="button"] {
+    background-color: #c95e5e;
+    color: white;
+}
+
+.edit-task button[type="button"]:hover {
+    background-color: #d391a1;
+}

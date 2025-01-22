@@ -1,35 +1,31 @@
-import React from 'react';
-import TaskListItem from './TaskListItem';
-import './TaskList.css';
+import React, { useContext } from "react";
+import TaskForm from "./TaskForm";
+import TaskListItem from "./TaskListItem";
+import EditTask from "./EditTask";
+import "./TaskList.css";
+import { customMap } from "./utils";
+import { TaskContext } from "./TaskContext";
 
-function TaskList({ tasks, loading, error, onToggle, onUpdate, onDelete }) {
-
-
-    if (loading) {
-    // Nếu loading true thì các task đang được tải vài giao diện sẽ hiển thị như dưới
-        return <div className="task-list-message">Loading tasks...</div>;
-    }
-
-    if (error) {
-        return <div className="task-list-message error">{error}</div>;
-    }
-
-    if (tasks.length === 0) {
-        return <div className="task-list-message">No tasks yet</div>;
-    }
+function TaskList() {
+   const context = useContext(TaskContext)
 
     return (
-        <div className="task-list">
-            {tasks.map(task => (
-                <TaskListItem
-                    key={task.id}
-                    task={task}
-                    onToggle={onToggle}
-                    onUpdate={onUpdate}
-                    onDelete={onDelete}
-                />
-            ))}
-        </div>
+            <div className="task-list">
+                <h1>Task List</h1>
+                <span>A Simple React Task List</span> <hr />
+                <ul>
+                    {customMap(context.tasks,(task) => (
+                        <li key={task.id}>
+                            {context.editTask === task.id ? (
+                                <EditTask task={task}/>
+                            ) : (
+                                <TaskListItem task={task} />
+                            )}
+                        </li>
+                    ))}
+                </ul>
+                <TaskForm />
+            </div>
     );
 }
 

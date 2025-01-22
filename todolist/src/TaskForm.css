@@ -21,15 +21,10 @@
 	color: white;
 	border: none;
 	border-radius: 4px;
-	cursor: pointer;
 	font-size: 16px;
-	transition: background-color 0.3s;
 }
 
 .add-button:hover {
 	background-color: #6db86f;
 }
 
-.add-button:active {
-	transform: translateY(1px);
-}

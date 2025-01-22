@@ -25,31 +25,32 @@ export function useTaskStorage() {
         const unsubscribe = onSnapshot(q, (snapshot) => {
         // onSnapshot: lắng nghe các thay đổi theo time. Có thể nhận update khi DL thay đổi mà k cần gọi lại q
         // snapshot: Đc gọi khi có thay đổi mới nhất trong DL FS. 
-            const tasksData = snapshot.docs.map(doc => ({
+            // const tasksData = snapshot.docs.map(doc => ({
             // snapshot.docs: array chứa all document
-                id: doc.id,
-                ...doc.data(),
+                // id: doc.id,
+                // ...doc.data(),
                 // Sao chép all field DL của document dạng object
-                createdAt: doc.data().createdAt?.toDate() || new Date()
+                // createdAt: doc.data().createdAt?.toDate() || new Date()
                 // Lấy giá trị của createdAt để lưu trữ time và ngày giờ
                 // toDate(): chuyển đổi giá trị timestamp thành 1 object data
-            }));
+                
+             const tasksData = [];
+                const docs = snapshot.docs;
+                // Kết quả của mảng chứa CSDL các documents từ FS được truy vấn
+                for (let i = 0; i < docs.length; i++) {
+                // Vòng lặp duyệt qua từng document trong mảng
+                    const docData = docs[i].data();
+                    // Lấy dữ liệu tại vị trí i và trả về như title, complete
+                    tasksData.push({
+                        id: docs[i].id,
+                        ...docData,
+                        createdAt: docData.createdAt?.toDate() || new Date()
+                    });
+                }
+
+            // }));
             setTasks(tasksData);
             setLoading(false);
-
-            //  const tasksData = [];
-            //     const docs = snapshot.docs;
-            //     // Kết quả của mảng chứa CSDL các documents từ FS được truy vấn
-            //     for (let i = 0; i < docs.length; i++) {
-            //     // Vòng lặp duyệt qua từng document trong mảng
-            //         const docData = docs[i].data();
-            //         // Lấy dữ liệu tại vị trí i và trả về như title, complete
-            //         tasksData.push({
-            //             id: docs[i].id,
-            //             ...docData,
-            //             createdAt: docData.createdAt?.toDate() || new Date()
-            //         });
-            //     }
 
         }, (err) => {
             setError('Failed to fetch tasks');

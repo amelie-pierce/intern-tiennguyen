@@ -1,12 +1,11 @@
 function customFilter(tasks, remove){
-    // Hàm thay thế cho phương thức Array.filter()
-    // tasks: Mảng các công việc
-    // remove: Hàm callback để kiểm tra điều kiện
+// tasks: Mảng ban đầu
+// remove: Hàm callback kiểm tra điều kiện để giữ lại phần tử
         const newItem = [];
         for ( let i = 0; i < tasks.length; i++){
         // Vòng lặp đi qua từng phần tử trong mảng
             if (remove(tasks[i])){
-            // Gọi hàm remove với đối số là tasks[i]. Kết quả trả về true - ĐK của hàm remove
+            // Gọi hàm remove với từng phần tử - Nếu hàm remove trả về true thì phần tử đó được giữ lại
                 newItem.push(tasks[i])
                 // Thêm phần tử vào cuối mảng
             }

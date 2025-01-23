@@ -1,42 +1,54 @@
 .task-list{
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 600px; 
-    width: 100%; 
-    margin: 50px auto; 
-    flex-direction: column; 
-    background-color: #fff;
-    border-radius: 20px;
-    text-align: center;
-}
-.task-list h1{
-    font-size: 40px;
-    color: #333;
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
     width: 100%;
+    max-width: 420px;
+    padding: 15px;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
-.task-list span{
-    width: 100%;
+ul{
+    list-style: none;
+    padding: 0px;
+}
+.task-text {
+    display: -webkit-box; /* Dùng box layout để giới hạn dòng */
+    -webkit-line-clamp: 2; /* Số dòng tối đa, ví dụ là 2 */
+    -webkit-box-orient: vertical; /* Đặt hướng dọc */
+    overflow: hidden; /* Ẩn phần tràn ra ngoài */
+    text-overflow: ellipsis; /* Thêm ba chấm nếu vượt quá giới hạn */
+}
+.task-list .input-edit{
+    width: 270;
+    height: 30px;
+    padding: 0 10px;
     font-size: 16px;
-    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: left;
 }
-hr { 
-    width: 70%; 
-    height: 1px; 
-    background: #333 
+.task-list .input-edit:focus{
+    border-color: #333;
 }
-ul {
-    list-style-type: none;
-    padding: 0;
+.task-list button[type="save"]{
+    height: 30px;
+    background-color: #7a7878;
+    color: white;
+}
+.task-list button[type="save"]:hover{
+    background-color: #333;
+}
+.task-list button[type="cancel"] {
+    height: 30px;
+    background-color: #c95e5e;
+    color: white;
 }
 
-ul li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 4px;
-    margin: 16px 0;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    word-break: break-word; /* Tự động xuống dòng nếu nội dung quá dài */
+.task-list button[type="cancel"]:hover {
+    background-color: #d391a1;
 }

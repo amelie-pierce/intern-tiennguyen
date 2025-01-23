@@ -1,4 +1,4 @@
-.task-form{
+.add-task{
     display: flex; 
     flex-direction: column;
     margin: 0 auto;
@@ -16,13 +16,13 @@ label{
     color: #333;
     font-weight: bold;
 }
-.form{
+.form-input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 10px; 
 }
-.task-form input[type="text"] {
+.add-task input[type="text"] {
     white-space: pre-wrap;
     height: 30px;
     width: 100%;
@@ -36,10 +36,10 @@ label{
     outline: none; /* Loại bỏ viền mặc định khi ô input được chọn. */
     text-align: left;
 }
-.task-form input[type="text"]:focus {
+.add-task input[type="text"]:focus {
     border-color: #3d3d3d;
 }
-.task-form button{
+.add-task button{
     font-size: 16px;
     height: auto;
     width: 90px;
@@ -49,6 +49,6 @@ label{
     color: white;
     border-radius: 4px;
 }
-.task-form button:hover{
+.add-task button:hover{
     background-color: #218838;
 }

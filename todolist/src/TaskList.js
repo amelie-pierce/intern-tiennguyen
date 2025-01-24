@@ -5,13 +5,13 @@ import { customMap } from "./utils";
 
 export default function TaskList() {
   const tasks = useTasks();
-  const dispatch = useTasksDispatch();
+  //Lấy danh sách tasks từ TasksContext từ hook useTasks
 
   return (
     <ul>
       {customMap(tasks,(task) => (
         <li key={task.id}>
-          <Task task={task} dispatch={dispatch} />
+          <Task task={task} />
         </li>
       ))}
     </ul>
@@ -21,12 +21,28 @@ export default function TaskList() {
 function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
   const [newTask, setNewTask] = useState(task.task);
+  // state lưu task mới khi chỉnh sửa
   const dispatch = useTasksDispatch();
+  // Lấy hàm dispatch từ TasksContext
 
   const handleSave = () => {
     dispatch({ type: "update", id: task.id, updatedTask: newTask });
+    // Gửi hành động để cập nhập tên task
+    // updateTask: newTask - Tên task mới sau khi chỉnh sửa
     setIsEditing(false);
   };
+
+  let deleteIcon = null;
+  if (!isEditing) {
+    deleteIcon = (
+      <img
+        style={{ width: "30px", height: "30px" }}
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhY_tishzTeujCDUzLrVq_ZIb7rIBZ9A8uQ&s"
+        alt="img-remove-task"
+        onClick={() => dispatch({ type: "delete", id: task.id })}
+      />
+    );
+  }
 
   return (
     <div className="task-list">
@@ -36,6 +52,7 @@ function Task({ task }) {
           onChange={() => dispatch({ type: "toggleStatus", id: task.id })}
         />
       {isEditing ? (
+        // Kiểm tra state chỉnh sửa: Nếu false thì hiển thị giao diện chỉnh sửa, false thì hiển thị danh sách task
         <>
           <input
             className="input-edit"
@@ -58,14 +75,7 @@ function Task({ task }) {
             />
         </>
       )}
-      {!isEditing && (
-        <img
-            style={{ width: "30px", height: "30px" }}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhY_tishzTeujCDUzLrVq_ZIb7rIBZ9A8uQ&s"
-            alt="img-remove-task"
-            onClick={() => dispatch({ type: "delete", id: task.id })}
-        />
-      )}
+      {deleteIcon}
     </div>
   );
 }

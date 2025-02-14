@@ -59,6 +59,10 @@ export function TasksProvider({ children }) {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
   // Đối số tasksReducerr: hàm reducer để xử lý các action và thay đổi trạng thái
   // Đối số initialTasks: giá trị ban đầu của state
+<<<<<<< HEAD
+=======
+  // return về [tasks, dispatch] 
+>>>>>>> d1ecd39c1a8d629e1267d9a123cf9bf9fa4c7261
 
   return (
     <TasksContext.Provider value={tasks}>
@@ -66,7 +70,10 @@ export function TasksProvider({ children }) {
       <TasksDispatchContext.Provider value={dispatch}>
     {/* Cung cấp hàm dispatch cho các component con */}
         {children}
+<<<<<<< HEAD
         {/* Truyền nội dung hoặc các component con vào bên trong một component cha */}
+=======
+>>>>>>> d1ecd39c1a8d629e1267d9a123cf9bf9fa4c7261
       </TasksDispatchContext.Provider>
     </TasksContext.Provider>
   );

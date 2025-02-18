@@ -2,10 +2,10 @@ import React, { createContext, useContext, useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { customFilter, customMap } from "./utils";
 
-const TasksContext = createContext(null);
-// Tạo context dùng để chia sẻ dữ liệu task cho các component con
-const TasksDispatchContext = createContext(null);
-// Context chứa hàm dispatch, dùng để gửi các action đến reducer và thay đổi trạng thái task
+const TasksContext = createContext();
+// Tạo context dùng để chia sẻ trạng thái tasks cho các component con
+const TasksDispatchContext = createContext();
+// Tạo context chứa hàm dispatch, dùng để gửi các action đến reducer và thay đổi trạng thái tasks
 
 const initialTasks = [
   { id: uuidv4(), task: "Learn JavaScript", status: true },
@@ -13,7 +13,9 @@ const initialTasks = [
 ];
 
 function tasksReducer(tasks, action) {
-// Hàm reducer quản lý các action và cập nhật trạng thái của danh sách tasks
+// Hàm reducer thực hiện các action và cập nhật trạng thái của danh sách tasks
+
+  // eslint-disable-next-line default-case
   switch (action.type) {
     case "add": {
       const createTask = [];
@@ -27,64 +29,47 @@ function tasksReducer(tasks, action) {
       return customFilter(tasks, (task) => task.id !== action.id);
     }
     case "toggleStatus": {
-      return customMap(tasks, (task) => {
-        if (task.id === action.id) {
-          return {
-            id: task.id,
-            task: task.task,
-            status: !task.status,
-          };
-        } else {
-          return {
-            id: task.id,
-            task: task.task,
-            status: task.status,
-          };
-        }
-      });
+
+      return customMap(tasks, (task) => 
+        task.id === action.id ? { id: task.id, task: task.task, status: !task.status } : task
+      );
     }
     case "update": {
       return customMap(tasks, (task) =>
         task.id === action.id ? { id: task.id, task: action.updatedTask, status: task.status } : task
       );
     }
-    default: {
-      throw new Error(`Unknown action: ${action.type}`);
-    }
   }
+  return tasks;
 }
 
 export function TasksProvider({ children }) {
 // Component bao bọc và cung cấp context cho các component con
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
-  // Đối số tasksReducerr: hàm reducer để xử lý các action và thay đổi trạng thái
-  // Đối số initialTasks: giá trị ban đầu của state
-<<<<<<< HEAD
-=======
-  // return về [tasks, dispatch] 
->>>>>>> d1ecd39c1a8d629e1267d9a123cf9bf9fa4c7261
+  // Sử dụng useReducer để tạo ra một state và hàm dispatch để thay đổi state
+  // tasksReducer: Hàm reducer xử lý các action và cập nhật trạng thái tasks
+  // initialTasks: Danh sách tasks ban đầu
+  // tasks: Danh sách tasks hiện tại
+  // dispatch: Hàm dispatch để gửi các action đến reducer và thay đổi trạng thái tasks
 
   return (
     <TasksContext.Provider value={tasks}>
-    {/*  Cung cấp giá trị tasks cho các component con */}
+    {/* Cung cấp danh sách tasks cho các component con */}
       <TasksDispatchContext.Provider value={dispatch}>
     {/* Cung cấp hàm dispatch cho các component con */}
         {children}
-<<<<<<< HEAD
-        {/* Truyền nội dung hoặc các component con vào bên trong một component cha */}
-=======
->>>>>>> d1ecd39c1a8d629e1267d9a123cf9bf9fa4c7261
+        {/* Hiển thị các component con */}
       </TasksDispatchContext.Provider>
     </TasksContext.Provider>
   );
 }
 
 export function useTasks() {
-// Hook dùng để truy cập danh sách các công việc từ context
+  // Hook dùng để truy cập danh sách tasks từ context
   return useContext(TasksContext);
 }
 
 export function useTasksDispatch() {
-// Hook dùng để truy cập hàm dispatch từ context, giúp gửi các action thay đổi trạng thái task
+  // Hook dùng để truy cập hàm dispatch từ context
   return useContext(TasksDispatchContext);
 }

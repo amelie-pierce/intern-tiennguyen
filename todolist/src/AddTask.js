@@ -10,7 +10,7 @@ export default function AddTask() {
     event.preventDefault();
     if (task.trim() === "") return;
     dispatch({ type: "add", task });
-    setTask(""); // Reset input field
+    setTask(""); 
   };
 
   return (

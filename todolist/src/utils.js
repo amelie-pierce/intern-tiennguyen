@@ -1,45 +1,22 @@
-function customFilter(tasks, remove){
-// tasks: Mảng ban đầu
-// remove: Hàm callback kiểm tra điều kiện để giữ lại phần tử
+function customFilter(array, fn){
         const newItem = [];
-        for ( let i = 0; i < tasks.length; i++){
-        // Vòng lặp đi qua từng phần tử trong mảng
-            if (remove(tasks[i])){
-            // Gọi hàm remove với từng phần tử - Nếu hàm remove trả về true thì phần tử đó được giữ lại
-                newItem.push(tasks[i])
+        for ( let i = 0; i < array.length; i++){
+            if (fn(array[i])) {
+            // Gọi hàm callback với từng phần tử và kiểm tra điều kiện trả về true thì thêm phần tử vào mảng mới
+                newItem.push(array[i])
                 // Thêm phần tử vào cuối mảng
             }
         }
         return newItem;
-
-        // Dùng vòng lặp while: 
-        // const newItem = [];
-        // let i = 0;
-        // while (i < tasks.length) {
-        //  if (remove(tasks[i])) {
-        //      newItem.push(tasks[i]);
-        //  }
-        //  i++;
-        // }
-        // return newItem;
 }
 
-function customMap(tasks, repeatTask){
+function customMap(array, fn){
     // Thay thế cho phương thức Array.map()
         const newItem = [];
-        for ( let i = 0; i < tasks.length; i++){
-            newItem.push(repeatTask(tasks[i]));
+        for ( let i = 0; i < array.length; i++){
+            newItem.push(fn(array[i]));
         }
         return newItem;
-
-        // const newItem = [];
-        // let i = 0;
-        // while (i < tasks.length) {
-        //      newItem.push(repeatTask(tasks[i]));
-        //      i++; 
-        // }
-        // return newItem;
 }
-
 
 export {customFilter, customMap};

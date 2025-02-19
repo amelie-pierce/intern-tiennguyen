@@ -46,11 +46,7 @@ function tasksReducer(tasks, action) {
 export function TasksProvider({ children }) {
 // Component bao bọc và cung cấp context cho các component con
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
-  // Sử dụng useReducer để tạo ra một state và hàm dispatch để thay đổi state
-  // tasksReducer: Hàm reducer xử lý các action và cập nhật trạng thái tasks
-  // initialTasks: Danh sách tasks ban đầu
-  // tasks: Danh sách tasks hiện tại
-  // dispatch: Hàm dispatch để gửi các action đến reducer và thay đổi trạng thái tasks
+  // Sử dụng useReducer tạo ra một state và hàm dispatch để thay đổi state
 
   return (
     <TasksContext.Provider value={tasks}>
